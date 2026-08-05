@@ -458,6 +458,79 @@
       font-weight: 900;
     }
 
+    .menu-viewer { max-width: 560px; margin: 0 auto; }
+    .menu-viewer-frame {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-track {
+      flex: 1;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x;
+      border-radius: 26px;
+      border: 1px solid rgba(255,249,238,.2);
+      background: rgba(255,249,238,.06);
+      box-shadow: 0 24px 60px rgba(0,0,0,.22);
+      scrollbar-width: none;
+    }
+    .menu-track::-webkit-scrollbar { display: none; }
+    .menu-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+    }
+    .menu-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.28);
+      cursor: zoom-in;
+    }
+    .menu-nav-btn {
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,249,238,.3);
+      background: rgba(255,249,238,.1);
+      backdrop-filter: blur(10px);
+      color: var(--cream);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .25s ease, transform .25s ease;
+    }
+    .menu-nav-btn:hover { background: rgba(255,249,238,.2); transform: scale(1.06); }
+    .menu-nav-btn:disabled { opacity: .35; cursor: default; transform: none; }
+    .menu-viewer-footer {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .menu-counter {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: rgba(255,249,238,.78);
+      font-size: 14px;
+    }
+    .menu-viewer-footer .btn { background: #f2ca7c; color: #2a1710; box-shadow: 0 16px 35px rgba(0,0,0,.25); }
+    .menu-viewer-footer .btn:hover { background: #e8bb64; }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: 1.2fr .8fr .8fr;
@@ -713,6 +786,7 @@
       <div class="nav-links" id="mobile-menu">
         <a href="#storia">Storia</a>
         <a href="#cucina">Cucina</a>
+        <a href="#menu">Menu</a>
         <a href="#galleria">Galleria</a>
         <a href="#contatti" class="btn">Prenota</a>
       </div>
@@ -803,6 +877,43 @@
       </div>
     </section>
 
+    <section id="menu" class="menu-section">
+      <div class="section-inner">
+        <div class="section-title reveal">
+          <h2>Il menu, pagina per pagina.</h2>
+          <p>Sfoglia le foto del menu con lo swipe o le frecce, oppure scarica il PDF completo per consultarlo comodamente.</p>
+        </div>
+        <div class="menu-viewer reveal">
+          <div class="menu-viewer-frame">
+            <button type="button" class="menu-nav-btn prev" aria-label="Pagina precedente">‹</button>
+            <div class="menu-track" id="menuTrack">
+              <div class="menu-slide"><img src="assets/menu/menu-page-01.webp" alt="Menu Le Clochard, pagina 1" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-02.webp" alt="Menu Le Clochard, pagina 2" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-03.webp" alt="Menu Le Clochard, pagina 3" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-04.webp" alt="Menu Le Clochard, pagina 4" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-05.webp" alt="Menu Le Clochard, pagina 5" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-06.webp" alt="Menu Le Clochard, pagina 6" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-07.webp" alt="Menu Le Clochard, pagina 7" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-08.webp" alt="Menu Le Clochard, pagina 8" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-09.webp" alt="Menu Le Clochard, pagina 9" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-10.webp" alt="Menu Le Clochard, pagina 10" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-11.webp" alt="Menu Le Clochard, pagina 11" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-12.webp" alt="Menu Le Clochard, pagina 12" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-13.webp" alt="Menu Le Clochard, pagina 13" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-14.webp" alt="Menu Le Clochard, pagina 14" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-15.webp" alt="Menu Le Clochard, pagina 15" width="1355" height="2400" loading="lazy"></div>
+              <div class="menu-slide"><img src="assets/menu/menu-page-16.webp" alt="Menu Le Clochard, pagina 16" width="1355" height="2400" loading="lazy"></div>
+            </div>
+            <button type="button" class="menu-nav-btn next" aria-label="Pagina successiva">›</button>
+          </div>
+          <div class="menu-viewer-footer">
+            <div class="menu-counter"><span id="menuCounterCurrent">1</span> / 16</div>
+            <a class="btn" href="assets/menu/menu-le-clochard.pdf" download="Menu-Le-Clochard.pdf">Scarica il PDF ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="galleria">
       <div class="section-inner">
         <div class="section-title reveal">
@@ -814,7 +925,7 @@
           <div class="gallery-item" data-label="Antipasti"></div>
           <div class="gallery-item" data-label="Pizza al forno"></div>
           <div class="gallery-item" data-label="Primi fatti in casa"></div>
-          <div class="gallery-item" data-label="La sala"></div>
+          <div class="gallery-item" data-label="Il gazebo"></div>
         </div>
       </div>
     </section>
@@ -899,6 +1010,52 @@
       nav.style.background = window.scrollY > 60 ? 'rgba(250, 245, 236, .94)' : 'rgba(250, 245, 236, .82)';
       nav.style.boxShadow = window.scrollY > 60 ? '0 16px 45px rgba(58, 28, 13, .16)' : '0 14px 40px rgba(58, 28, 13, .10)';
     });
+
+    const menuTrack = document.getElementById('menuTrack');
+    if (menuTrack) {
+      const slides = Array.from(menuTrack.querySelectorAll('.menu-slide'));
+      const prevBtn = document.querySelector('.menu-nav-btn.prev');
+      const nextBtn = document.querySelector('.menu-nav-btn.next');
+      const counterEl = document.getElementById('menuCounterCurrent');
+      const total = slides.length;
+
+      function currentIndex() {
+        const slideWidth = menuTrack.clientWidth;
+        return Math.round(menuTrack.scrollLeft / slideWidth);
+      }
+
+      function goTo(index) {
+        const clamped = Math.max(0, Math.min(total - 1, index));
+        menuTrack.scrollTo({ left: clamped * menuTrack.clientWidth, behavior: 'smooth' });
+      }
+
+      function updateUI() {
+        const idx = currentIndex();
+        counterEl.textContent = idx + 1;
+        prevBtn.disabled = idx <= 0;
+        nextBtn.disabled = idx >= total - 1;
+      }
+
+      prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+      nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+
+      let scrollTimeout;
+      menuTrack.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateUI, 80);
+      });
+
+      window.addEventListener('resize', () => {
+        menuTrack.scrollTo({ left: currentIndex() * menuTrack.clientWidth });
+      });
+
+      slides.forEach((slide) => {
+        const img = slide.querySelector('img');
+        img.addEventListener('click', () => window.open(img.src, '_blank'));
+      });
+
+      updateUI();
+    }
   </script>
 </body>
 </html>
