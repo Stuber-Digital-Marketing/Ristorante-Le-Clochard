@@ -13,7 +13,6 @@
     "image": "https://ristoranteleclochard.it/assets/hero-sala.webp",
     "url": "https://ristoranteleclochard.it/",
     "telephone": "+393473624774",
-    "email": "ristoranteleclochard@gmail.com",
     "servesCuisine": ["Italian", "Mediterranean", "Pizza"],
     "priceRange": "€€",
     "menu": "https://ristoranteleclochard.it/assets/menu/menu-le-clochard.pdf",
@@ -974,7 +973,7 @@
         </div>
         <div class="info-card reveal">
           <h3>Contatti</h3>
-          <p><a href="tel:+393473624774">+39 347 362 4774</a><br><a href="mailto:ristoranteleclochard@gmail.com">ristoranteleclochard@gmail.com</a></p>
+          <p><a href="tel:+393473624774">+39 347 362 4774</a><br><a href="#" class="js-email" data-mail="cmlzdG9yYW50ZWxlY2xvY2hhcmRAZ21haWwuY29t">Scrivi una email</a></p>
         </div>
         <div class="info-card reveal">
           <h3>Servizi</h3>
@@ -991,7 +990,7 @@
         </div>
         <div class="cta-actions">
           <a href="tel:+393473624774" class="btn" aria-label="Chiama il Ristorante Le Clochard al numero +39 347 362 4774">Chiama ora</a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ristoranteleclochard@gmail.com&su=Prenotazione%20tavolo%20-%20Ristorante%20Le%20Clochard" class="btn secondary" target="_blank" rel="noopener" title="Apre Gmail con l’indirizzo già compilato">Scrivi un’email</a>
+          <a href="#" class="btn secondary js-gmail" data-mail="cmlzdG9yYW50ZWxlY2xvY2hhcmRAZ21haWwuY29t" data-subject="Prenotazione tavolo - Ristorante Le Clochard" target="_blank" rel="noopener" title="Apre Gmail con l’indirizzo già compilato">Scrivi un’email</a>
           <a href="https://maps.app.goo.gl/nA7QVGFMACaoDFBT6" class="btn secondary" target="_blank" rel="noopener">Apri Google Maps</a>
         </div>
       </div>
@@ -1093,6 +1092,18 @@
 
       updateUI();
     }
+
+    // Email ricostruita solo lato client per limitare la raccolta automatica da parte di bot spam.
+    document.querySelectorAll('.js-email').forEach((el) => {
+      const mail = atob(el.dataset.mail);
+      el.href = 'mailto:' + mail;
+      el.textContent = mail;
+    });
+    document.querySelectorAll('.js-gmail').forEach((el) => {
+      const mail = atob(el.dataset.mail);
+      const subject = encodeURIComponent(el.dataset.subject || '');
+      el.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${mail}&su=${subject}`;
+    });
   </script>
 </body>
 </html>

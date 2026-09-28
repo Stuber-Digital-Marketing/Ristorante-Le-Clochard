@@ -86,7 +86,7 @@
         Partita IVA: <strong>02419890690</strong><br>
         Sede / locale: Via Trento e Trieste, Vico II 8 — 66036 Orsogna (CH), Italia<br>
         Telefono: <a href="tel:+393473624774">+39 347 362 4774</a><br>
-        Email: <a href="mailto:ristoranteleclochard@gmail.com">ristoranteleclochard@gmail.com</a>
+        Email: <a href="#" class="js-email" data-mail="cmlzdG9yYW50ZWxlY2xvY2hhcmRAZ21haWwuY29t">Scrivi una email</a>
       </p>
 
       <h2>Finalità del sito</h2>
@@ -100,12 +100,19 @@
         <li>scrivendo un'email all'indirizzo indicato per una prenotazione o una richiesta.</li>
       </ul>
       <p>In questi casi, i dati (es. nome, numero di telefono, indirizzo email) sono utilizzati esclusivamente per gestire la prenotazione o rispondere alla richiesta, e non vengono ceduti a terzi né utilizzati per finalità di marketing senza consenso esplicito, ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
-      <p>Per esercitare i diritti previsti dagli articoli 15‑22 del GDPR (accesso, rettifica, cancellazione, opposizione) è possibile scrivere a <a href="mailto:ristoranteleclochard@gmail.com">ristoranteleclochard@gmail.com</a>.</p>
+      <p>Per esercitare i diritti previsti dagli articoli 15‑22 del GDPR (accesso, rettifica, cancellazione, opposizione) è possibile scrivere a <a href="#" class="js-email" data-mail="cmlzdG9yYW50ZWxlY2xvY2hhcmRAZ21haWwuY29t">questo indirizzo email</a>.</p>
 
       <h2>Proprietà dei contenuti</h2>
       <p>Testi, foto e menu presenti su questo sito sono di proprietà del Ristorante Le Clochard e non possono essere riprodotti senza autorizzazione.</p>
     </div>
   </div>
   <footer>© Ristorante Le Clochard · Orsogna</footer>
+  <script>
+    document.querySelectorAll('.js-email').forEach((el) => {
+      const mail = atob(el.dataset.mail);
+      el.href = 'mailto:' + mail;
+      if (el.textContent.includes('@')) el.textContent = mail;
+    });
+  </script>
 </body>
 </html>
