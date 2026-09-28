@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ristorante Le Clochard | Orsogna</title>
   <meta name="description" content="Ristorante Le Clochard a Orsogna — cucina mediterranea, pizza tradizionale, terrazza e prenotazioni." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Ristorante Le Clochard",
+    "image": "https://ristoranteleclochard.it/assets/hero-sala.webp",
+    "url": "https://ristoranteleclochard.it/",
+    "telephone": "+393473624774",
+    "email": "ristoranteleclochard@gmail.com",
+    "servesCuisine": ["Italian", "Mediterranean", "Pizza"],
+    "priceRange": "€€",
+    "menu": "https://ristoranteleclochard.it/assets/menu/menu-le-clochard.pdf",
+    "acceptsReservations": "True",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Trento e Trieste, Vico II 8",
+      "addressLocality": "Orsogna",
+      "addressRegion": "CH",
+      "postalCode": "66036",
+      "addressCountry": "IT"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "19:00",
+        "closes": "23:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/p/Ristorante-Le-Clochard-100063614800686/"
+    ]
+  }
+  </script>
   <style>
     :root {
       --ink: #2a1710;
@@ -651,6 +685,8 @@
       gap: 16px;
       flex-wrap: wrap;
     }
+    footer a { text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--wine); }
 
 
     .photo.one { background-position: center 52%; }
@@ -965,6 +1001,7 @@
       <div class="section-inner">
         <span>© Ristorante Le Clochard · Orsogna</span>
         <span>Ristorante & Pizzeria · Cucina italiana con cuore</span>
+        <span><a href="note-legali.html">Note legali</a></span>
       </div>
     </footer>
   </div>
